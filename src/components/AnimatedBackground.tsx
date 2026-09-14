@@ -1,27 +1,2 @@
 import { useEffect } from 'react';
-
-export default function AnimatedBackground() {
-  useEffect(() => {
-    const handleMouseMove = (e: MouseEvent) => {
-      // Update mouse position for glow-box radial gradients
-      const boxes = document.querySelectorAll('.glow-box, .glass-card');
-      boxes.forEach((box) => {
-        const rect = (box as HTMLElement).getBoundingClientRect();
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
-        (box as HTMLElement).style.setProperty('--mouse-x', `${x}px`);
-        (box as HTMLElement).style.setProperty('--mouse-y', `${y}px`);
-      });
-    };
-
-    window.addEventListener('mousemove', handleMouseMove);
-    return () => window.removeEventListener('mousemove', handleMouseMove);
-  }, []);
-
-  return (
-    <>
-      <div className="animated-bg"></div>
-      <div className="noise-overlay"></div>
-    </>
-  );
-}
+export default function AnimatedBackground(){useEffect(()=>{const handle=(e:MouseEvent)=>{document.documentElement.style.setProperty('--mouse-screen-x',`${e.clientX}px`);document.documentElement.style.setProperty('--mouse-screen-y',`${e.clientY}px`);document.querySelectorAll('.glow-box,.glass-card').forEach(el=>{const r=(el as HTMLElement).getBoundingClientRect();(el as HTMLElement).style.setProperty('--mouse-x',`${e.clientX-r.left}px`);(el as HTMLElement).style.setProperty('--mouse-y',`${e.clientY-r.top}px`)})};window.addEventListener('mousemove',handle,{passive:true});return()=>window.removeEventListener('mousemove',handle)},[]);return <><div className="animated-bg"/><div className="noise-overlay"/></>}
