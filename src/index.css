@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-background-primary: #050a15;
+  --color-background-secondary: #0A0A0A;
+  --color-accent-primary: #00e5ff;
+  --color-accent-secondary: #7b2cbf;
+  --color-text-primary: #ffffff;
+  --color-text-secondary: #a1a1aa;
+}
+
+@layer base {
+  :root {
+    --bg-primary: #050a15;
+    --bg-secondary: #0A0A0A;
+    --text-primary: #ffffff;
+    --text-secondary: #a1a1aa;
+    --accent: #00e5ff;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  @keyframes aurora {
+    0% { background-position: 50% 50%, 50% 50%; }
+    50% { background-position: 100% 50%, 0% 50%; }
+    100% { background-position: 50% 50%, 50% 50%; }
+  }
+
+  body {
+    background-color: var(--bg-primary);
+    background-image: 
+      radial-gradient(circle at top left, rgba(0, 229, 255, 0.15) 0%, transparent 50%),
+      radial-gradient(circle at bottom right, rgba(59, 130, 246, 0.15) 0%, transparent 50%);
+    background-size: 200% 200%;
+    background-attachment: fixed;
+    animation: aurora 15s ease infinite;
+    color: var(--text-primary);
+    font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+    overflow-x: hidden;
+  }
+  
+  h1, h2, h3, h4, h5, h6, .font-heading {
+    font-family: 'Space Grotesk', system-ui, sans-serif;
+    letter-spacing: -0.02em;
+  }
+  
+  ::selection {
+    background: rgba(0, 229, 255, 0.3);
+    color: white;
+  }
+}
+
+.glass-panel {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.glow-box {
+  background: rgba(8, 51, 68, 0.2);
+  border: 1px solid rgba(0, 229, 255, 0.3);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 0 15px rgba(0, 229, 255, 0.1), inset 0 0 20px rgba(0, 229, 255, 0.05);
+  transition: all 0.4s ease;
+}
+
+.glow-box:hover {
+  border-color: rgba(0, 229, 255, 0.7);
+  box-shadow: 0 0 30px rgba(0, 229, 255, 0.3), inset 0 0 30px rgba(0, 229, 255, 0.1);
+  transform: translateY(-5px);
+}
+
+.text-gradient {
+  background: linear-gradient(to right, #00e5ff, #3b82f6, #9333ea);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}

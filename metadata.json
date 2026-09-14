@@ -1,0 +1,6 @@
+{
+  "name": "Aza E-Commerce",
+  "description": "Portfolio website for Aza E-Commerce featuring a 3D animated layout.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
