@@ -48,7 +48,7 @@ export default function Home() {
                   <span className="mt-3 text-[10px] md:text-xs text-[var(--text-secondary)] leading-relaxed">Strategy • Design • Growth</span>
                 </div>
                 <div className="absolute right-[9%] top-[15%] w-[38%] h-[68%] rounded-2xl border border-[rgba(103,232,255,.3)] bg-[rgba(8,20,33,.75)] flex items-center justify-center shadow-[0_0_35px_rgba(0,217,255,.12)]">
-                  <img src="/logo.svg" alt="AZA E-Commerce Agency" className="w-[62%] aspect-square rounded-full object-cover shadow-[0_0_25px_rgba(0,217,255,.18)]" />
+                  <img src="/aza-logo.svg" alt="AZA E-Commerce Agency" className="w-[62%] aspect-square rounded-full object-cover shadow-[0_0_25px_rgba(0,217,255,.18)]" />
                 </div>
               </div>
               <div className="mx-[10%] h-4 rounded-b-2xl bg-gradient-to-b from-[#263746] to-[#050b11] border-x border-b border-[rgba(103,232,255,.22)]" />
