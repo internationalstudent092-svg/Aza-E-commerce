@@ -19,7 +19,7 @@ export default function About() {
   ];
 
   const timeline = [
-    { year: "2026", title: "Senior Performance Engineer", company: "EZA Studio", desc: "Leading frontend architecture and creative development for premium digital products." },
+    { year: "2026", title: "Senior Performance Engineer", company: "AZA Studio", desc: "Leading frontend architecture and creative development for premium digital products." },
     { year: "2023", title: "Lead Creative Developer", company: "Digital Wave Agency", desc: "Built award-winning WebGL experiences and headless eCommerce platforms." },
     { year: "2020", title: "Full-Stack Developer", company: "TechNova Solutions", desc: "Developed scalable SaaS applications and comprehensive design systems." },
     { year: "2018", title: "Frontend Intern", company: "Creative Labs", desc: "Started journey in web development focusing on responsive design and interactive UI." },
@@ -71,7 +71,7 @@ export default function About() {
               className="w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-1000"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-[var(--background)] to-transparent flex flex-col justify-end p-8">
-               <h3 className="text-2xl font-bold text-white">EZA Studio</h3>
+               <h3 className="text-2xl font-bold text-white">AZA Studio</h3>
                <p className="text-[var(--neon-cyan)] text-sm font-semibold tracking-widest uppercase">San Francisco, CA</p>
             </div>
           </motion.div>
