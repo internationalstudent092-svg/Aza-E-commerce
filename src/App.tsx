@@ -8,6 +8,7 @@ import Layout from './components/Layout/Layout';
 import Home from './pages/Home';
 import Services from './pages/Services';
 import Courses from './pages/Courses';
+import CourseDetail from './pages/CourseDetail';
 import About from './pages/About';
 import Projects from './pages/Projects';
 import Blog from './pages/Blog';
@@ -22,6 +23,7 @@ export default function App() {
           <Route path="/" element={<Home />} />
           <Route path="/services" element={<Services />} />
           <Route path="/courses" element={<Courses />} />
+          <Route path="/courses/:slug" element={<CourseDetail />} />
           <Route path="/about" element={<About />} />
           <Route path="/projects" element={<Projects />} />
           <Route path="/blog" element={<Blog />} />

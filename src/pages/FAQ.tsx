@@ -1,7 +1,7 @@
 import { motion, AnimatePresence } from 'motion/react';
 import { useState } from 'react';
-import { Plus, Minus, ArrowRight } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Plus, Minus } from 'lucide-react';
+import AnimatedButton from '../components/AnimatedButton';
 
 const faqs = [
   {
@@ -39,10 +39,10 @@ export default function FAQ() {
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="max-w-4xl"
         >
-          <span className="text-cyan-400 text-sm font-semibold tracking-widest uppercase mb-6 block">FAQ</span>
+          <span className="text-[var(--neon-cyan)] text-sm font-semibold tracking-widest uppercase mb-6 block">FAQ</span>
           <h1 className="text-5xl md:text-7xl font-bold text-white mb-8 tracking-tight">
             QUESTIONS BEFORE <br/>
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">WE START?</span>
+            <span className="text-transparent bg-clip-text bg-[var(--neon-gradient)]">WE START?</span>
           </h1>
         </motion.div>
       </section>
@@ -57,17 +57,17 @@ export default function FAQ() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: idx * 0.1 }}
-              className="border border-white/10 rounded-2xl bg-white/5 overflow-hidden"
+              className="glass-card rounded-2xl overflow-hidden group hover:border-[var(--neon-blue)] transition-colors duration-300"
             >
               <button 
                 onClick={() => setOpenIndex(openIndex === idx ? null : idx)}
-                className="w-full flex items-center justify-between p-6 md:p-8 text-left hover:bg-white/5 transition-colors"
+                className="w-full flex items-center justify-between p-6 md:p-8 text-left hover:bg-[var(--surface-light)] transition-colors"
               >
-                <h3 className="text-lg md:text-xl font-bold text-white pr-8">{faq.question}</h3>
+                <h3 className="text-lg md:text-xl font-bold text-white pr-8 group-hover:text-[var(--neon-cyan)] transition-colors">{faq.question}</h3>
                 {openIndex === idx ? (
-                  <Minus className="w-6 h-6 text-cyan-400 flex-shrink-0" />
+                  <Minus className="w-6 h-6 text-[var(--neon-cyan)] flex-shrink-0" />
                 ) : (
-                  <Plus className="w-6 h-6 text-white flex-shrink-0" />
+                  <Plus className="w-6 h-6 text-[var(--text-muted)] flex-shrink-0 group-hover:text-white transition-colors" />
                 )}
               </button>
               
@@ -79,7 +79,7 @@ export default function FAQ() {
                     exit={{ height: 0, opacity: 0 }}
                     transition={{ duration: 0.3 }}
                   >
-                    <div className="px-6 md:px-8 pb-8 text-zinc-400 leading-relaxed font-light">
+                    <div className="px-6 md:px-8 pb-8 text-[var(--text-secondary)] leading-relaxed font-light">
                       {faq.answer}
                     </div>
                   </motion.div>
@@ -89,12 +89,11 @@ export default function FAQ() {
           ))}
         </div>
         
-        <div className="mt-16 text-center">
-          <p className="text-zinc-400 mb-6">Still have questions?</p>
-          <Link to="/contact" className="inline-flex items-center space-x-2 px-8 py-4 bg-white text-black font-semibold rounded-full hover:bg-cyan-400 transition-all shadow-[0_0_30px_rgba(255,255,255,0.15)] group">
-            <span>Contact Me</span>
-            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-          </Link>
+        <div className="mt-24 text-center flex flex-col items-center">
+          <p className="text-[var(--text-secondary)] mb-8">Still have questions?</p>
+          <AnimatedButton to="/contact" variant="primary">
+            Contact Me
+          </AnimatedButton>
         </div>
       </section>
     </div>

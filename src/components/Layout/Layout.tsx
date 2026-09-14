@@ -1,6 +1,8 @@
 import { ReactNode, useEffect } from 'react';
 import Header from './Header';
 import Footer from './Footer';
+import AnimatedBackground from '../AnimatedBackground';
+import Cursor from '../Cursor';
 import { motion, AnimatePresence } from 'motion/react';
 import { useLocation } from 'react-router-dom';
 import { siteConfig } from '../../data/config';
@@ -26,7 +28,9 @@ export default function Layout({ children }: { children: ReactNode }) {
   }, [location.pathname]);
 
   return (
-    <div className="relative min-h-screen flex flex-col w-full text-white overflow-hidden bg-transparent">
+    <div className="relative min-h-screen flex flex-col w-full text-white overflow-hidden">
+      <AnimatedBackground />
+      <Cursor />
       <Header />
       <AnimatePresence mode="wait">
         <motion.main
